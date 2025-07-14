@@ -28,7 +28,7 @@ function About({ lang }) {
           <img
             src={guindoPhoto}
             alt="Guindo Salifou"
-            className="rounded-full  object-cover shadow-xl"
+            className=" object-cover shadow-xl"
           />
         </div>
 
