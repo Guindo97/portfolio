@@ -10,15 +10,15 @@ export default {
         sans: ['Inter', 'sans-serif'],
       },
       animation: {
+        scroll: 'scroll-horizontal 30s linear infinite',
         slide: 'slide 30s linear infinite',
-        scroll: 'scroll 30s linear infinite',
       },
       keyframes: {
-        slide: {
+        scrollHorizontal: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
         },
-        scroll: {
+        slide: {
           '0%': { transform: 'translateX(0)' },
           '100%': { transform: 'translateX(-50%)' },
         },
