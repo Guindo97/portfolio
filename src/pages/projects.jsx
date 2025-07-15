@@ -1,3 +1,4 @@
+// src/pages/projects.jsx
 import React from "react";
 
 function Projects({ lang }) {
@@ -8,6 +9,10 @@ function Projects({ lang }) {
         ? "Application de commande mobile pour food trucks."
         : "Mobile ordering app for food trucks.",
       github: "https://github.com/Guindo97/foodifly",
+      images: [
+        "/img/foodi1.png", "/img/foodi2.png", "/img/foodi3.png", "/img/foodi4.png", "/img/foodi5.png",
+        "/img/foodi6.png", "/img/foodi7.png", "/img/foodi8.png", "/img/foodi9.png", "/img/foodi10.png"
+      ]
     },
     {
       title: "Snake Game",
@@ -15,6 +20,7 @@ function Projects({ lang }) {
         ? "Jeu Snake en Java avec interface graphique."
         : "Snake game in Java with GUI.",
       github: "https://github.com/Guindo97/snakegame",
+      images: ["/img/snake1.png", "/img/snake2.png", "/img/snake3.png", "/img/snake4.png"]
     },
     {
       title: "Calculatrice iPhone",
@@ -22,16 +28,17 @@ function Projects({ lang }) {
         ? "Reproduction de la calculatrice iOS avec Flutter."
         : "iOS calculator clone with Flutter.",
       github: "https://github.com/Guindo97/calculatrice",
-    },
+      images: ["/img/calculatrice1.png", "/img/calculatrice2.png"]
+    }
   ];
 
   return (
-    <section id="projects" className="py-20 bg-slate-50">
+    <section id="projects" className="py-20 bg-slate-50 dark:bg-slate-900">
       <div className="max-w-6xl mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold text-slate-800 mb-2">
+        <h2 className="text-3xl font-bold text-slate-800 dark:text-white mb-2">
           {lang === "fr" ? "📁 Mes projets" : "📁 My Projects"}
         </h2>
-        <p className="text-slate-600 mb-10">
+        <p className="text-slate-600 dark:text-slate-300 mb-10">
           {lang === "fr"
             ? "Voici quelques projets réalisés récemment."
             : "Here are some recent projects I've built."}
@@ -41,17 +48,31 @@ function Projects({ lang }) {
           {projects.map((project, index) => (
             <div
               key={index}
-              className="bg-white shadow-md rounded-xl p-6 hover:shadow-xl transition text-left"
+              className="bg-white dark:bg-slate-800 shadow-md rounded-xl p-4 hover:shadow-xl transition text-left"
             >
-              <h3 className="text-xl font-semibold text-slate-800 mb-2">
+              {/* Carrousel d’images visibles entièrement */}
+              <div className="overflow-x-auto rounded-md mb-4 bg-white flex items-center justify-center">
+                <div className="flex gap-3 w-max animate-scroll py-2">
+                  {[...project.images, ...project.images].map((img, i) => (
+                    <img
+                      key={i}
+                      src={img}
+                      alt={`${project.title} image ${i}`}
+                      className="h-40 max-w-none object-contain rounded-lg bg-slate-100 shadow"
+                    />
+                  ))}
+                </div>
+              </div>
+
+              <h3 className="text-xl font-semibold text-slate-800 dark:text-white mb-2">
                 {project.title}
               </h3>
-              <p className="text-slate-600 mb-4">{project.description}</p>
+              <p className="text-slate-600 dark:text-slate-300 mb-4">{project.description}</p>
               <a
                 href={project.github}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-purple-600 font-medium hover:underline"
+                className="text-purple-600 dark:text-purple-400 font-medium hover:underline"
               >
                 GitHub ↗
               </a>

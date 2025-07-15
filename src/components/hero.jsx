@@ -44,8 +44,7 @@ const Hero = ({ lang }) => {
           <img src="/img/html.png" alt="HTML" className="h-8" />
           <img src="/img/css.png" alt="CSS" className="h-8" />
           <img src="/img/java.png" alt="Java" className="h-8" />
-
-          {/* Duplique les logos pour effet infini */}
+          {/* Dupliqué pour boucle */}
           <img src="/img/react.png" alt="React" className="h-8" />
           <img src="/img/javascript.png" alt="JavaScript" className="h-8" />
           <img src="/img/flutter.png" alt="Flutter" className="h-8" />
@@ -56,6 +55,59 @@ const Hero = ({ lang }) => {
           <img src="/img/html.png" alt="HTML" className="h-8" />
           <img src="/img/css.png" alt="CSS" className="h-8" />
           <img src="/img/java.png" alt="Java" className="h-8" />
+        </div>
+      </div>
+
+      {/* SECTION "How can I help you?" */}
+      <div className="mt-24 text-center max-w-6xl">
+        <h2 className="text-3xl font-bold text-slate-800 dark:text-white mb-2">
+          {lang === "fr" ? "Comment puis-je vous aider ?" : "How can I help you?"}
+        </h2>
+        <p className="text-slate-600 dark:text-slate-300 mb-10">
+          {lang === "fr"
+            ? "Je conçois des expériences utilisateurs sur mesure, alignées avec vos objectifs."
+            : "I craft tailored user experiences from scratch, aligned with your goals."}
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+          {/* Web Development */}
+          <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-sm p-6">
+            <img src="/img/webdev.png" alt="Web Development" className="w-20 h-20 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold text-slate-800 dark:text-white mb-2">
+              {lang === "fr" ? "Développement Web" : "Web Development"}
+            </h3>
+            <p className="text-slate-600 dark:text-slate-300">
+              {lang === "fr"
+                ? "Création de sites modernes et performants avec React, totalement responsives."
+                : "Building modern and high-performance websites with React, fully responsive."}
+            </p>
+          </div>
+
+          {/* REST API */}
+          <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-sm p-6">
+            <img src="/img/api.png" alt="API Development" className="w-20 h-20 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold text-slate-800 dark:text-white mb-2">
+              {lang === "fr" ? "Développement d'API REST" : "REST API Development"}
+            </h3>
+            <p className="text-slate-600 dark:text-slate-300">
+              {lang === "fr"
+                ? "Création d’API REST robustes avec Node.js, architecture propre et modulaire."
+                : "Creating robust REST APIs using Node.js with a clean and modular architecture."}
+            </p>
+          </div>
+
+          {/* UI/UX */}
+          <div className="bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-xl shadow-sm p-6">
+            <img src="/img/design.png" alt="UI/UX Design" className="w-20 h-20 mx-auto mb-4" />
+            <h3 className="text-xl font-semibold text-slate-800 dark:text-white mb-2">
+              UI/UX Design
+            </h3>
+            <p className="text-slate-600 dark:text-slate-300">
+              {lang === "fr"
+                ? "Conception de maquettes interactives et prototypage avec Figma."
+                : "Designing interactive mockups and prototyping user interfaces using Figma."}
+            </p>
+          </div>
         </div>
       </div>
     </section>

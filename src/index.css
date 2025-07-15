@@ -2,11 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Style global */
 body {
   @apply bg-slate-50 text-slate-800;
   font-family: 'Inter', sans-serif;
 }
 
+/* Animation scroll horizontal (pour logos Hero) */
 @keyframes scroll-horizontal {
   0% {
     transform: translateX(0);
@@ -27,4 +29,26 @@ body {
   gap: 2rem;
   width: max-content;
   animation: scroll-horizontal 20s linear infinite;
+}
+
+/* Animation scroll horizontale pour les projets */
+@keyframes scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 30s linear infinite;
+}
+
+/* Empêche les images d’être coupées dans les projets */
+.project-image {
+  width: 200px;
+  height: 140px;
+  object-fit: contain;
+  object-position: center;
 }
