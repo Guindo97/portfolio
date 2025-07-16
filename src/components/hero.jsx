@@ -6,9 +6,9 @@ const Hero = ({ lang }) => {
       {/* Contenu principal */}
       <div className="flex flex-col md:flex-row items-center gap-6 max-w-4xl mx-auto">
         <img
-          src="/img/salifouguindo.jpg"
+          src="/img/mrsalifg.jpg"
           alt="Salifou Guindo"
-          className="w-60 h-60 rounded-full shadow-lg mb-6 object-cover"
+          className="w-80 h-60 rounded-full shadow-lg mb-6 object-cover"
         />
 
         <div>

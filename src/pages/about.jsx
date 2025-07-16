@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from "react";
-import guindoPhoto from "/img/guindo.jpg";
+import guindoPhoto from "/img/salifouguindo.jpg";
 
 function About({ lang }) {
   const ref = useRef(null);
