@@ -8,7 +8,7 @@ const Hero = ({ lang }) => {
         <img
           src="/img/mrsalifg.jpg"
           alt="Salifou Guindo"
-          className="w-80 h-60 rounded-full shadow-lg mb-6 object-cover"
+          className="w-40 h-40 rounded-full shadow-lg mb-6 object-cover"
         />
 
         <div>
