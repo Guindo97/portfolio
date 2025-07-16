@@ -35,7 +35,7 @@ function Projects({ lang }) {
       description: lang === "fr"
         ? "Tika Harvest est une plateforme développée en Vue.js et Next.js pour permettre aux agriculteurs de mon pays de s’envoyer des messages directement sur la plateforme et aussi de marchander."
         : "Tika Harvest is a platform built with Vue.js and Next.js that allows farmers in my country to message each other directly and negotiate deals.",
-      github: "https://github.com/Guindo97/tika",
+      live: "https://sms.tikaharvest.com/login",
       images: Array.from({ length: 22 }, (_, i) => `/img/tika${i + 1}.png`)
     }
   ];
@@ -76,14 +76,28 @@ function Projects({ lang }) {
                 {project.title}
               </h3>
               <p className="text-slate-600 dark:text-slate-300 mb-4">{project.description}</p>
-              <a
-                href={project.github}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-purple-600 dark:text-purple-400 font-medium hover:underline"
-              >
-                GitHub ↗
-              </a>
+
+              {/* Bouton : GitHub ou Voir le projet */}
+              {project.github && (
+                <a
+                  href={project.github}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-purple-600 dark:text-purple-400 font-medium hover:underline"
+                >
+                  GitHub ↗
+                </a>
+              )}
+              {project.live && (
+                <a
+                  href={project.live}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-purple-600 dark:text-purple-400 font-medium hover:underline"
+                >
+                  {lang === "fr" ? "Voir le projet ↗" : "View Project ↗"}
+                </a>
+              )}
             </div>
           ))}
         </div>
