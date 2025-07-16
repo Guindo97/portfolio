@@ -44,6 +44,9 @@ const Hero = ({ lang }) => {
           <img src="/img/html.png" alt="HTML" className="h-8" />
           <img src="/img/css.png" alt="CSS" className="h-8" />
           <img src="/img/java.png" alt="Java" className="h-8" />
+          <img src="/img/NuxtJS.png" alt="Nust" className="h-8" />
+          <img src="/img/Nextjs.jpeg" alt="Next" className="h-8" />
+          <img src="/img/Vuejs.png" alt="Vue" className="h-8" />
           {/* Dupliqué pour boucle */}
           <img src="/img/react.png" alt="React" className="h-8" />
           <img src="/img/javascript.png" alt="JavaScript" className="h-8" />
@@ -55,6 +58,9 @@ const Hero = ({ lang }) => {
           <img src="/img/html.png" alt="HTML" className="h-8" />
           <img src="/img/css.png" alt="CSS" className="h-8" />
           <img src="/img/java.png" alt="Java" className="h-8" />
+          <img src="/img/NuxtJS.png" alt="Nust" className="h-8" />
+          <img src="/img/Nextjs.jpeg" alt="Next" className="h-8" />
+          <img src="/img/Vuejs.png" alt="Vue" className="h-8" />
         </div>
       </div>
 
