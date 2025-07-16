@@ -29,6 +29,14 @@ function Projects({ lang }) {
         : "iOS calculator clone with Flutter.",
       github: "https://github.com/Guindo97/calculatrice",
       images: ["/img/calculatrice1.png", "/img/calculatrice2.png"]
+    },
+    {
+      title: "Harvest",
+      description: lang === "fr"
+        ? "Harvest est une plateforme développée en Vue.js et Next.js pour permettre aux agriculteurs de mon pays de s’envoyer des messages directement sur la plateforme et aussi de marchander."
+        : "Harvest is a platform built with Vue.js and Next.js that allows farmers in my country to message each other directly and negotiate deals.",
+      github: "https://github.com/Guindo97/tika", // ✅ Ton lien GitHub réel ici
+      images: Array.from({ length: 22 }, (_, i) => `/img/tika${i + 1}.png`)
     }
   ];
 
