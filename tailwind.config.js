@@ -10,8 +10,8 @@ export default {
         sans: ['Inter', 'sans-serif'],
       },
       animation: {
-        scroll: 'scroll-horizontal 30s linear infinite',
-        slide: 'slide 30s linear infinite',
+        scroll: 'scroll-horizontal 20s linear infinite',
+        slide: 'slide 20s linear infinite',
       },
       keyframes: {
         scrollHorizontal: {

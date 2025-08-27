@@ -23,8 +23,9 @@ function Projects({ lang }) {
       ? "Site web officiel de la communauté ivoirienne à Edmonton. Permet aux membres d’accéder aux services, événements, et de contacter l’association."
       : "Official website for the Ivoiro-Canadian community in Edmonton. Allows members to access services, events, and contact the association.",
     github: "https://github.com/Guindo97/cie",
-    link: "https://cie-nine.vercel.app/",
-    images: Array.from({ length: 10 }, (_, i) => `/img/cie1${i + 1}.png`)
+    live: "https://cie-nine.vercel.app/",
+    images: Array.from({ length: 15 }, (_, i) => `/img/cie${i + 1}.png`)
+
   },
 
     {
