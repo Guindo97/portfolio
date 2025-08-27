@@ -3,6 +3,8 @@ import React from "react";
 
 function Projects({ lang }) {
   const projects = [
+    
+
     {
       title: "FoodiFly",
       description: lang === "fr"
@@ -14,6 +16,17 @@ function Projects({ lang }) {
         "/img/foodi6.png", "/img/foodi7.png", "/img/foodi8.png", "/img/foodi9.png", "/img/foodi10.png"
       ]
     },
+
+    {
+    title: "Communauté Ivoiro-Canadienne",
+    description: lang === "fr"
+      ? "Site web officiel de la communauté ivoirienne à Edmonton. Permet aux membres d’accéder aux services, événements, et de contacter l’association."
+      : "Official website for the Ivoiro-Canadian community in Edmonton. Allows members to access services, events, and contact the association.",
+    github: "https://github.com/Guindo97/cie",
+    link: "https://cie-nine.vercel.app/",
+    images: Array.from({ length: 10 }, (_, i) => `/img/cie1${i + 1}.png`)
+  },
+
     {
       title: "Snake Game",
       description: lang === "fr"
