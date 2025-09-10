@@ -43,7 +43,7 @@ function Contact({ lang }) {
 
   // Animation de typing pour le titre
   useEffect(() => {
-    const fullText = lang === "fr" ? "Contactez-moi" : "Get In Touch";
+    const fullText = lang === "fr" ? "Contact" : "Get In Touch";
     let index = 0;
     
     const typeText = () => {
@@ -235,12 +235,12 @@ function Contact({ lang }) {
       <div className="max-w-7xl mx-auto px-4 relative z-10">
         {/* Header avec animation de typing */}
         <div className="text-center mb-20">
-          <h1 className="text-6xl md:text-7xl font-bold bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent mb-8 animate-fade-in-up">
+          <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold bg-gradient-to-r from-purple-600 via-blue-600 to-cyan-600 bg-clip-text text-transparent mb-8 animate-fade-in-up">
             <span className="typing-text">{typingText}</span>
-            <span className="text-4xl ml-4">🚀</span>
+            <span className="text-2xl sm:text-3xl md:text-4xl ml-2 sm:ml-4">🚀</span>
           </h1>
-          <p className="text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-12 animate-fade-in-up animation-delay-200 max-w-3xl mx-auto leading-relaxed">
-            {lang === "fr" 
+          <p className="text-lg sm:text-xl md:text-2xl text-slate-600 dark:text-slate-300 mb-12 animate-fade-in-up animation-delay-200 max-w-3xl mx-auto leading-relaxed px-4">
+          {lang === "fr"
               ? "Prêt à donner vie à vos idées ? Discutons de votre prochain projet !" 
               : "Ready to bring your ideas to life? Let's discuss your next project!"}
           </p>
