@@ -4,6 +4,28 @@ const Hero = ({ lang }) => {
   const [isVisible, setIsVisible] = useState(false);
   const heroRef = useRef(null);
 
+  // Fonction pour télécharger le CV (compatible iOS)
+  const handleDownloadCV = (e) => {
+    e.preventDefault();
+    
+    // Détection iOS
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
+    
+    if (isIOS) {
+      // Sur iOS, ouvrir dans un nouvel onglet
+      window.open('/img/Resume Salifou Guindo Dev.pdf', '_blank');
+    } else {
+      // Sur les autres navigateurs, téléchargement direct
+      const link = document.createElement('a');
+      link.href = '/img/Resume Salifou Guindo Dev.pdf';
+      link.download = 'Resume Salifou Guindo Dev.pdf';
+      link.target = '_blank';
+      document.body.appendChild(link);
+      link.click();
+      document.body.removeChild(link);
+    }
+  };
+
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => {
@@ -59,13 +81,20 @@ const Hero = ({ lang }) => {
               ? "Développeur passionné spécialisé en technologies JavaScript (React), Flutter... Diplômé du CCNB en 2025, je suis motivé à rejoindre une équipe dynamique pour relever de vrais défis techniques."
               : "Passionate developer specialized in JavaScript (React), Flutter... Graduated from CCNB in 2025, I'm eager to join a dynamic team and tackle real technical challenges."}
           </p>
-          <a
-            href="/img/Resume_SalifGCV.pdf"
-            download
-            className="mt-6 inline-block bg-purple-600 text-white font-medium px-6 py-3 rounded-lg hover:bg-purple-700 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl animate-fade-in-up animation-delay-600"
-          >
-            {lang === "fr" ? "Télécharger mon CV" : "Download CV"}
-          </a>
+          <div className="mt-6">
+            <button
+              onClick={handleDownloadCV}
+              className="inline-block bg-purple-600 text-white font-medium px-6 py-3 rounded-lg hover:bg-purple-700 hover:scale-105 transition-all duration-300 shadow-lg hover:shadow-xl animate-fade-in-up animation-delay-600 cursor-pointer"
+              aria-label={lang === "fr" ? "Télécharger mon CV (PDF)" : "Download CV (PDF)"}
+            >
+              {lang === "fr" ? "Télécharger mon CV" : "Download CV"}
+            </button>
+            <p className="mt-2 text-xs text-slate-500 dark:text-slate-400 animate-fade-in-up animation-delay-700">
+              {lang === "fr" 
+                ? "📱 Sur mobile : le PDF s'ouvrira dans un nouvel onglet" 
+                : "📱 On mobile: PDF will open in a new tab"}
+            </p>
+          </div>
         </div>
       </div>
 
