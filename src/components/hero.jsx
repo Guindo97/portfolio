@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import Footer from './footer';
 
 const Hero = ({ lang }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -189,6 +190,9 @@ const Hero = ({ lang }) => {
           </div>
         </div>
       </div>
+      
+      {/* Footer */}
+      <Footer lang={lang} />
     </section>
   );
 };

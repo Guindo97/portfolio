@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt } from "react-icons/fa";
+import Footer from "../components/footer";
 
 function Contact({ lang }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -79,10 +80,10 @@ function Contact({ lang }) {
           </a>
         </div>
 
-        <p className="mt-12 text-sm text-slate-500 dark:text-slate-400 animate-fade-in-up animation-delay-800">
-          © 2025 Salifou Guindo. {lang === "fr" ? "Tous droits réservés." : "All rights reserved."}
-        </p>
       </div>
+      
+      {/* Footer */}
+      <Footer lang={lang} />
     </section>
   );
 }

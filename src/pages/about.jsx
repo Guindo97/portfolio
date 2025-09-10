@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from "react";
 import guindoPhoto from "/img/salifouguindo.jpg";
+import Footer from "../components/footer";
 
 function About({ lang }) {
   const ref = useRef(null);
@@ -105,6 +106,9 @@ function About({ lang }) {
           </div>
         </div>
       </div>
+      
+      {/* Footer */}
+      <Footer lang={lang} />
     </section>
   );
 }
