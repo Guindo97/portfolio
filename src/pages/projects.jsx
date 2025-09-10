@@ -61,7 +61,7 @@ function Projects({ lang }) {
 
   // Statistiques des projets
   const projectStats = {
-    total: 6,
+    total: 15,
     technologies: 4,
     completed: 3,
     github: 6
