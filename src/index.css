@@ -297,4 +297,20 @@ body {
   .hero-photo-pulse {
     animation: gentle-pulse 3s ease-in-out infinite !important;
   }
+  
+  /* Améliorations pour les projets sur mobile */
+  .project-card {
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+  
+  .project-image {
+    min-width: 120px;
+    max-width: 150px;
+  }
+  
+  .project-buttons {
+    min-height: 44px;
+    touch-action: manipulation;
+  }
 }
