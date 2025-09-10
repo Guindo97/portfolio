@@ -8,10 +8,17 @@ function About({ lang }) {
   useEffect(() => {
     const observer = new IntersectionObserver(
       ([entry]) => setVisible(entry.isIntersecting),
-      { threshold: 0.3 }
+      { threshold: 0.1 }
     );
 
     if (ref.current) observer.observe(ref.current);
+    
+    // Forcer l'affichage immédiat sur mobile
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      setVisible(true);
+    }
+    
     return () => observer.disconnect();
   }, []);
 
@@ -90,7 +97,7 @@ function About({ lang }) {
                   <p className="text-slate-700 dark:text-slate-300 mt-1">
                     {lang === "fr"
                       ? "BTS en Développement d'Applications — Côte d'Ivoire"
-                      : "BTS in Application Development — Ivory Coast"}
+                      : "Associate Degree in Application Development — Ivory Coast"}
                   </p>
                 </div>
               </div>

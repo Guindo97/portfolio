@@ -26,17 +26,25 @@ const Hero = ({ lang }) => {
       {/* Contenu principal */}
       <div 
         ref={heroRef}
-        className={`flex flex-col md:flex-row items-center gap-6 max-w-4xl mx-auto transition-all duration-1000 ${
+        className={`flex flex-col md:flex-row items-center gap-8 md:gap-16 lg:gap-20 xl:gap-24 max-w-7xl mx-auto transition-all duration-1000 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
       >
         <div className="relative group">
+          {/* Halo effect */}
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-400 to-blue-400 opacity-20 blur-2xl scale-125 group-hover:opacity-30 transition-opacity duration-500 md:block"></div>
+          {/* Halo effect mobile */}
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-400 to-blue-400 opacity-15 blur-xl scale-110 md:hidden"></div>
+          
           <img
             src="/img/mrsalifg.jpg"
             alt="Salifou Guindo"
-            className="w-40 h-40 rounded-full shadow-lg mb-6 object-cover transition-all duration-500 group-hover:scale-105 group-hover:shadow-2xl"
+            className="hero-photo hero-photo-pulse w-64 h-64 md:w-80 md:h-80 lg:w-96 lg:h-96 xl:w-[28rem] xl:h-[28rem] rounded-full mb-6 object-cover object-top transition-all duration-500 group-hover:scale-105 border-4 border-white dark:border-slate-800 relative z-10"
           />
-          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300"></div>
+          
+          <div className="absolute inset-0 rounded-full bg-gradient-to-r from-purple-600 to-blue-600 opacity-0 group-hover:opacity-20 transition-opacity duration-300 z-20"></div>
+          {/* Effet de brillance */}
+          <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-transparent via-white to-transparent opacity-0 group-hover:opacity-30 transition-opacity duration-500 z-20"></div>
         </div>
 
         <div className="space-y-4">

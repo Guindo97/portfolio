@@ -73,10 +73,15 @@ const Header = ({ lang, toggleLang }) => {
               <button
                 onClick={toggleTheme}
                 className="mobile-button flex items-center gap-2 p-3 rounded-lg bg-slate-100 dark:bg-slate-700 text-slate-800 dark:text-white hover:bg-slate-200 dark:hover:bg-slate-600 transition-all duration-300 w-full md:w-auto justify-center"
-                aria-label={isDark ? "Passer en mode clair" : "Passer en mode sombre"}
+                aria-label={isDark ? (lang === "fr" ? "Passer en mode clair" : "Switch to light mode") : (lang === "fr" ? "Passer en mode sombre" : "Switch to dark mode")}
               >
                 {isDark ? <FaSun className="w-4 h-4" /> : <FaMoon className="w-4 h-4" />}
-                <span className="md:hidden">{isDark ? "Mode clair" : "Mode sombre"}</span>
+                <span className="md:hidden">
+                  {isDark 
+                    ? (lang === "fr" ? "Mode clair" : "Light mode")
+                    : (lang === "fr" ? "Mode sombre" : "Dark mode")
+                  }
+                </span>
               </button>
 
               {/* Bouton langue */}

@@ -22,6 +22,12 @@ function Projects({ lang }) {
       return observer;
     });
 
+    // Forcer l'affichage immédiat sur mobile
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      setVisibleProjects(projectRefs.current.map((_, index) => index));
+    }
+
     return () => {
       observers.forEach(observer => observer?.disconnect());
     };
@@ -42,9 +48,9 @@ function Projects({ lang }) {
     },
 
     {
-    title: "Communauté Ivoiro-Canadienne",
+    title: lang === "fr" ? "Communauté Ivoiro-Canadienne" : "Ivoiro-Canadian Community",
     description: lang === "fr"
-      ? "Site web officiel de la communauté ivoirienne à Edmonton. Permet aux membres d’accéder aux services, événements, et de contacter l’association."
+      ? "Site web officiel de la communauté ivoirienne à Edmonton. Permet aux membres d'accéder aux services, événements, et de contacter l'association."
       : "Official website for the Ivoiro-Canadian community in Edmonton. Allows members to access services, events, and contact the association.",
     github: "https://github.com/Guindo97/cie",
     live: "https://cie-nine.vercel.app/",
@@ -53,7 +59,7 @@ function Projects({ lang }) {
   },
 
     {
-      title: "Snake Game",
+      title: lang === "fr" ? "Jeu Snake" : "Snake Game",
       description: lang === "fr"
         ? "Jeu Snake en Java avec interface graphique."
         : "Snake game in Java with GUI.",
@@ -61,7 +67,7 @@ function Projects({ lang }) {
       images: ["/img/snake1.png", "/img/snake2.png", "/img/snake3.png", "/img/snake4.png"]
     },
     {
-      title: "Calculatrice iPhone",
+      title: lang === "fr" ? "Calculatrice iPhone" : "iPhone Calculator",
       description: lang === "fr"
         ? "Reproduction de la calculatrice iOS avec Flutter."
         : "iOS calculator clone with Flutter.",
@@ -71,7 +77,7 @@ function Projects({ lang }) {
     {
       title: "Tika Harvest",
       description: lang === "fr"
-        ? "Tika Harvest est une plateforme développée en Vue.js et Next.js pour permettre aux agriculteurs de mon pays de s’envoyer des messages directement sur la plateforme et aussi de marchander."
+        ? "Tika Harvest est une plateforme développée en Vue.js et Next.js pour permettre aux agriculteurs de mon pays de s'envoyer des messages directement sur la plateforme et aussi de marchander."
         : "Tika Harvest is a platform built with Vue.js and Next.js that allows farmers in my country to message each other directly and negotiate deals.",
       live: "https://sms.tikaharvest.com/login",
       github: "https://github.com/Guindo97/sms-sender-font-main.git",

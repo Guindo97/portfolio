@@ -19,6 +19,12 @@ function Contact({ lang }) {
       observer.observe(contactRef.current);
     }
 
+    // Forcer l'affichage immédiat sur mobile
+    const isMobile = window.innerWidth < 768;
+    if (isMobile) {
+      setIsVisible(true);
+    }
+
     return () => observer.disconnect();
   }, []);
 
@@ -51,14 +57,14 @@ function Contact({ lang }) {
             target="_blank" 
             rel="noopener noreferrer" 
             className="p-3 rounded-full bg-white dark:bg-slate-700 shadow-md hover:shadow-lg hover:scale-110 hover:text-purple-600 dark:hover:text-purple-400 transition-all duration-300 group"
-            aria-label="GitHub"
+            aria-label={lang === "fr" ? "Profil GitHub" : "GitHub Profile"}
           >
             <FaGithub className="group-hover:animate-bounce" />
           </a>
           <a 
             href="mailto:salifouguindo7@gmail.com" 
             className="p-3 rounded-full bg-white dark:bg-slate-700 shadow-md hover:shadow-lg hover:scale-110 hover:text-purple-600 dark:hover:text-purple-400 transition-all duration-300 group"
-            aria-label="Email"
+            aria-label={lang === "fr" ? "Envoyer un email" : "Send email"}
           >
             <FaEnvelope className="group-hover:animate-bounce" />
           </a>
@@ -67,7 +73,7 @@ function Contact({ lang }) {
             target="_blank" 
             rel="noopener noreferrer" 
             className="p-3 rounded-full bg-white dark:bg-slate-700 shadow-md hover:shadow-lg hover:scale-110 hover:text-purple-600 dark:hover:text-purple-400 transition-all duration-300 group"
-            aria-label="LinkedIn"
+            aria-label={lang === "fr" ? "Profil LinkedIn" : "LinkedIn Profile"}
           >
             <FaLinkedin className="group-hover:animate-bounce" />
           </a>

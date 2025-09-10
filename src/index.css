@@ -234,3 +234,67 @@ body {
   min-height: 44px; /* Taille minimale recommandée pour les boutons tactiles */
   touch-action: manipulation;
 }
+
+/* Amélioration de la photo du hero */
+.hero-photo {
+  box-shadow: 
+    0 25px 50px -12px rgba(0, 0, 0, 0.25),
+    0 0 0 1px rgba(255, 255, 255, 0.1),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
+}
+
+.hero-photo:hover {
+  box-shadow: 
+    0 35px 60px -12px rgba(0, 0, 0, 0.35),
+    0 0 0 1px rgba(255, 255, 255, 0.2),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+}
+
+/* Animation de pulsation subtile */
+@keyframes gentle-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.02);
+  }
+}
+
+.hero-photo-pulse {
+  animation: gentle-pulse 4s ease-in-out infinite;
+}
+
+/* Forcer l'affichage immédiat sur mobile */
+@media (max-width: 768px) {
+  .animate-fade-in-up,
+  .animate-fade-in-left,
+  .animate-fade-in-right,
+  .animate-scale-in,
+  .animate-bounce-in {
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+  
+  .animation-delay-200,
+  .animation-delay-400,
+  .animation-delay-600,
+  .animation-delay-800,
+  .animation-delay-1000 {
+    animation-delay: 0s !important;
+    opacity: 1 !important;
+  }
+  
+  /* Effets visuels pour mobile */
+  .hero-photo {
+    box-shadow: 
+      0 0 0 4px rgba(255, 255, 255, 0.1),
+      0 0 20px rgba(139, 92, 246, 0.3),
+      0 0 40px rgba(59, 130, 246, 0.2),
+      0 0 60px rgba(139, 92, 246, 0.1) !important;
+  }
+  
+  .hero-photo-pulse {
+    animation: gentle-pulse 3s ease-in-out infinite !important;
+  }
+}
