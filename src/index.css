@@ -830,6 +830,10 @@ body {
   
   /* Optimisations mobile pour la page d'accueil */
   .hero-enhanced {
+    background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 50%, #cbd5e1 100%) !important;
+  }
+  
+  .dark .hero-enhanced {
     background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%) !important;
   }
   
@@ -862,6 +866,13 @@ body {
   .stat-card-enhanced {
     padding: 1rem !important;
     backdrop-filter: blur(10px) !important;
+    background: rgba(255, 255, 255, 0.7) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .dark .stat-card-enhanced {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
   }
   
   .stat-number {
@@ -870,12 +881,25 @@ body {
   
   .glass-card-enhanced {
     backdrop-filter: blur(10px) !important;
-    background: rgba(255, 255, 255, 0.1) !important;
+    background: rgba(255, 255, 255, 0.8) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .dark .glass-card-enhanced {
+    background: rgba(0, 0, 0, 0.2) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
   }
   
   .skill-card {
     padding: 1rem !important;
     backdrop-filter: blur(5px) !important;
+    background: rgba(255, 255, 255, 0.6) !important;
+    border: 1px solid rgba(0, 0, 0, 0.1) !important;
+  }
+  
+  .dark .skill-card {
+    background: rgba(255, 255, 255, 0.05) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
   }
   
   .timeline-item-enhanced::before {
