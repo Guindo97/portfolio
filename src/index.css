@@ -191,3 +191,46 @@ body {
 .animate-pulse-glow {
   animation: pulse-glow 2s ease-in-out infinite;
 }
+
+/* Animations pour le menu mobile */
+@keyframes slide-in-left {
+  0% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+  100% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+@keyframes slide-out-left {
+  0% {
+    transform: translateX(0);
+    opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 0;
+  }
+}
+
+.mobile-menu-enter {
+  animation: slide-in-left 0.3s ease-out forwards;
+}
+
+.mobile-menu-exit {
+  animation: slide-out-left 0.3s ease-out forwards;
+}
+
+/* Amélioration du menu mobile */
+.mobile-menu {
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+/* Amélioration des boutons mobiles */
+.mobile-button {
+  min-height: 44px; /* Taille minimale recommandée pour les boutons tactiles */
+  touch-action: manipulation;
+}
