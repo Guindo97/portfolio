@@ -169,7 +169,7 @@ function Contact({ lang }) {
   const stats = [
     { number: "24h", label: lang === "fr" ? "Réponse" : "Response" },
     { number: "100%", label: lang === "fr" ? "Satisfaction" : "Satisfaction" },
-    { number: "50+", label: lang === "fr" ? "Projets" : "Projects" },
+    { number: "17+", label: lang === "fr" ? "Projets" : "Projects" },
     { number: "3+", label: lang === "fr" ? "Années" : "Years" }
   ];
 
