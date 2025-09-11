@@ -130,6 +130,7 @@ const Hero = ({ lang }) => {
   };
 
   return (
+    <>
     <section className="hero-enhanced min-h-screen flex flex-col items-center justify-center px-4 text-center transition-colors duration-300 relative overflow-hidden">
       {/* Particules flottantes */}
       {particles.map(particle => (
@@ -370,10 +371,11 @@ const Hero = ({ lang }) => {
           </div>
         </div>
       </div>
-      
-      {/* Footer */}
-      <Footer lang={lang} />
     </section>
+    
+    {/* Footer */}
+    <Footer lang={lang} />
+    </>
   );
 };
 

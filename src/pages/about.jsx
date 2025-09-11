@@ -73,6 +73,7 @@ function About({ lang }) {
   ];
 
   return (
+    <>
     <section id="about" className="py-24 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300 relative overflow-hidden">
       {/* Particules flottantes */}
       {particles.map(particle => (
@@ -358,10 +359,11 @@ function About({ lang }) {
           )}
         </div>
       </div>
-      
-      {/* Footer */}
-      <Footer lang={lang} />
     </section>
+    
+    {/* Footer */}
+    <Footer lang={lang} />
+    </>
   );
 }
 

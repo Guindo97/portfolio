@@ -7,123 +7,120 @@ const Footer = ({ lang }) => {
   const currentYear = new Date().getFullYear();
 
   return (
-    <footer className="bg-slate-800 dark:bg-slate-900 text-white py-8 mt-16">
-      <div className="max-w-6xl mx-auto px-4">
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
+    <footer className="bg-slate-800 dark:bg-slate-900 text-white py-6 w-full">
+      <div className="w-full px-4">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Informations personnelles */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-bold text-purple-400">
-              {lang === "fr" ? "Salifou Guindo" : "Salifou Guindo"}
+          <div>
+            <h3 className="text-lg font-bold text-purple-400 mb-2">
+              Salifou Guindo
             </h3>
-            <p className="text-slate-300 text-sm leading-relaxed">
+            <p className="text-slate-300 text-sm mb-3">
               {lang === "fr" 
                 ? "Développeur Frontend passionné, spécialisé en React, Flutter et technologies modernes."
                 : "Passionate Frontend Developer, specialized in React, Flutter and modern technologies."
               }
             </p>
-            <div className="flex space-x-4">
+            <div className="flex space-x-3">
               <a 
                 href="https://github.com/Guindo97" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-purple-400 transition-colors duration-300 p-2 rounded-lg hover:bg-slate-700"
+                className="text-slate-400 hover:text-purple-400 transition-colors duration-300 p-1"
                 aria-label={lang === "fr" ? "Profil GitHub" : "GitHub Profile"}
               >
-                <FaGithub className="w-5 h-5" />
+                <FaGithub className="w-4 h-4" />
               </a>
               <a 
                 href="https://www.linkedin.com/in/salifou-guindo7" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-slate-400 hover:text-purple-400 transition-colors duration-300 p-2 rounded-lg hover:bg-slate-700"
+                className="text-slate-400 hover:text-purple-400 transition-colors duration-300 p-1"
                 aria-label={lang === "fr" ? "Profil LinkedIn" : "LinkedIn Profile"}
               >
-                <FaLinkedin className="w-5 h-5" />
+                <FaLinkedin className="w-4 h-4" />
               </a>
               <a 
                 href="mailto:salifouguindo7@gmail.com"
-                className="text-slate-400 hover:text-purple-400 transition-colors duration-300 p-2 rounded-lg hover:bg-slate-700"
+                className="text-slate-400 hover:text-purple-400 transition-colors duration-300 p-1"
                 aria-label={lang === "fr" ? "Envoyer un email" : "Send email"}
               >
-                <FaEnvelope className="w-5 h-5" />
+                <FaEnvelope className="w-4 h-4" />
               </a>
             </div>
           </div>
 
           {/* Liens rapides */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-bold text-purple-400 mb-4">
+          <div>
+            <h3 className="text-lg font-bold text-purple-400 mb-3">
               {lang === "fr" ? "Liens rapides" : "Quick Links"}
             </h3>
-            <nav className="space-y-2">
+            <nav className="space-y-1">
               <Link 
                 to="/" 
-                className="group flex items-center text-slate-300 hover:text-purple-400 transition-all duration-300 text-sm py-3 px-4 rounded-lg hover:bg-slate-700/50 hover:shadow-lg border border-transparent hover:border-purple-500/30"
+                className="group flex items-center text-slate-300 hover:text-purple-400 transition-all duration-300 text-sm py-1"
               >
-                <FaHome className="w-4 h-4 mr-3 group-hover:scale-110 transition-transform duration-300" />
-                <span className="font-medium">{lang === "fr" ? "Accueil" : "Home"}</span>
+                <FaHome className="w-3 h-3 mr-2 group-hover:scale-110 transition-transform duration-300" />
+                <span>{lang === "fr" ? "Accueil" : "Home"}</span>
               </Link>
               <Link 
                 to="/about" 
-                className="group flex items-center text-slate-300 hover:text-purple-400 transition-all duration-300 text-sm py-3 px-4 rounded-lg hover:bg-slate-700/50 hover:shadow-lg border border-transparent hover:border-purple-500/30"
+                className="group flex items-center text-slate-300 hover:text-purple-400 transition-all duration-300 text-sm py-1"
               >
-                <FaUser className="w-4 h-4 mr-3 group-hover:scale-110 transition-transform duration-300" />
-                <span className="font-medium">{lang === "fr" ? "À propos" : "About"}</span>
+                <FaUser className="w-3 h-3 mr-2 group-hover:scale-110 transition-transform duration-300" />
+                <span>{lang === "fr" ? "À propos" : "About"}</span>
               </Link>
               <Link 
                 to="/projects" 
-                className="group flex items-center text-slate-300 hover:text-purple-400 transition-all duration-300 text-sm py-3 px-4 rounded-lg hover:bg-slate-700/50 hover:shadow-lg border border-transparent hover:border-purple-500/30"
+                className="group flex items-center text-slate-300 hover:text-purple-400 transition-all duration-300 text-sm py-1"
               >
-                <FaFolderOpen className="w-4 h-4 mr-3 group-hover:scale-110 transition-transform duration-300" />
-                <span className="font-medium">{lang === "fr" ? "Projets" : "Projects"}</span>
+                <FaFolderOpen className="w-3 h-3 mr-2 group-hover:scale-110 transition-transform duration-300" />
+                <span>{lang === "fr" ? "Projets" : "Projects"}</span>
               </Link>
               <Link 
                 to="/contact" 
-                className="group flex items-center text-slate-300 hover:text-purple-400 transition-all duration-300 text-sm py-3 px-4 rounded-lg hover:bg-slate-700/50 hover:shadow-lg border border-transparent hover:border-purple-500/30"
+                className="group flex items-center text-slate-300 hover:text-purple-400 transition-all duration-300 text-sm py-1"
               >
-                <FaEnvelopeOpen className="w-4 h-4 mr-3 group-hover:scale-110 transition-transform duration-300" />
-                <span className="font-medium">{lang === "fr" ? "Contact" : "Contact"}</span>
+                <FaEnvelopeOpen className="w-3 h-3 mr-2 group-hover:scale-110 transition-transform duration-300" />
+                <span>{lang === "fr" ? "Contact" : "Contact"}</span>
               </Link>
             </nav>
           </div>
 
           {/* Contact et localisation */}
-          <div className="space-y-4">
-            <h3 className="text-xl font-bold text-purple-400">
+          <div>
+            <h3 className="text-lg font-bold text-purple-400 mb-3">
               {lang === "fr" ? "Contact" : "Contact"}
             </h3>
-            <div className="space-y-2 text-sm text-slate-300">
+            <div className="text-sm text-slate-300 space-y-1">
               <p>
                 <span className="font-medium">{lang === "fr" ? "Email:" : "Email:"}</span>
-                <br />
                 <a 
                   href="mailto:salifouguindo7@gmail.com" 
-                  className="hover:text-purple-400 transition-colors duration-300"
+                  className="hover:text-purple-400 transition-colors duration-300 ml-1"
                 >
                   salifouguindo7@gmail.com
                 </a>
               </p>
               <p>
                 <span className="font-medium">{lang === "fr" ? "Localisation:" : "Location:"}</span>
-                <br />
-                {lang === "fr" ? "Edmonton, Alberta, Canada" : "Edmonton, Alberta, Canada"}
+                <span className="ml-1">{lang === "fr" ? "Edmonton, Alberta, Canada" : "Edmonton, Alberta, Canada"}</span>
               </p>
               <p>
                 <span className="font-medium">{lang === "fr" ? "Disponibilité:" : "Availability:"}</span>
-                <br />
-                {lang === "fr" ? "Ouvert aux opportunités" : "Open to opportunities"}
+                <span className="ml-1">{lang === "fr" ? "Ouvert aux opportunités" : "Open to opportunities"}</span>
               </p>
             </div>
           </div>
         </div>
 
-        {/* Séparateur */}
-        <div className="border-t border-slate-700 mt-8 pt-6">
-          <div className="flex flex-col sm:flex-row justify-between items-center space-y-3 sm:space-y-0 text-center sm:text-left">
+        {/* Séparateur et copyright */}
+        <div className="border-t border-slate-700 mt-4 pt-4">
+          <div className="flex flex-col sm:flex-row justify-between items-center text-center sm:text-left">
             <p className="text-slate-400 text-sm">
               © {currentYear} Salifou Guindo. {lang === "fr" ? "Tous droits réservés." : "All rights reserved."}
             </p>
-            <p className="text-slate-500 text-xs">
+            <p className="text-slate-500 text-xs mt-1 sm:mt-0">
               {lang === "fr" 
                 ? "Développé avec ❤️ en React" 
                 : "Developed with ❤️ in React"

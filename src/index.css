@@ -1280,6 +1280,20 @@ body {
   left: 100%;
 }
 
+/* Styles pour le footer */
+footer {
+  width: 100% !important;
+  margin: 0 !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
+/* S'assurer qu'il n'y a pas d'espaces en dessous du footer */
+body {
+  margin: 0;
+  padding: 0;
+}
+
 /* Styles pour le nouveau design des projets */
 .scrollbar-hide {
   -ms-overflow-style: none;

@@ -207,6 +207,7 @@ function Contact({ lang }) {
   };
 
   return (
+    <>
     <section id="contact" className="py-24 bg-gradient-to-br from-slate-50 via-white to-slate-100 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300 relative overflow-hidden">
       {/* Particules flottantes améliorées */}
       {particles.map(particle => (
@@ -569,10 +570,11 @@ function Contact({ lang }) {
           )}
         </div>
       </div>
-      
-      {/* Footer */}
-      <Footer lang={lang} />
     </section>
+    
+    {/* Footer */}
+    <Footer lang={lang} />
+    </>
   );
 }
 

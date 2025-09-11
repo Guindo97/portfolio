@@ -161,6 +161,7 @@ function Projects({ lang }) {
   ];
 
   return (
+    <>
     <section id="projects" className="py-20 bg-gradient-to-br from-slate-50 via-blue-50 to-purple-50 dark:from-slate-900 dark:via-slate-800 dark:to-slate-900 transition-colors duration-300 relative overflow-hidden">
       {/* Particules flottantes (désactivées sur mobile) */}
       {typeof window !== 'undefined' && window.innerWidth >= 768 && particles.map(particle => (
@@ -476,10 +477,11 @@ function Projects({ lang }) {
           </div>
         ))}
       </div>
-      
-      {/* Footer */}
-      <Footer lang={lang} />
     </section>
+    
+    {/* Footer */}
+    <Footer lang={lang} />
+    </>
   );
 }
 
