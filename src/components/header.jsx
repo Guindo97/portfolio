@@ -20,9 +20,9 @@ const Header = ({ lang, toggleLang }) => {
       
       <header className="bg-white shadow-md dark:bg-slate-900 relative z-50">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-        <h1 className="text-xl font-bold text-slate-800 dark:text-white">
+        <Link to="/" className="text-xl font-bold text-slate-800 dark:text-white hover:text-purple-600 transition-colors">
           Guindo <span className="text-purple-600">Salifou</span>
-        </h1>
+        </Link>
 
         {/* Bouton burger mobile */}
         <button onClick={() => setOpen(!open)} className="md:hidden">
