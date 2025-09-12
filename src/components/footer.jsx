@@ -6,6 +6,14 @@ import { FaGithub, FaLinkedin, FaEnvelope, FaHome, FaUser, FaFolderOpen, FaEnvel
 const Footer = ({ lang }) => {
   const currentYear = new Date().getFullYear();
 
+  // Fonction pour scroller vers le haut de la page
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <footer className="bg-slate-800 dark:bg-slate-900 text-white py-6 w-full">
       <div className="w-full px-4">
@@ -58,6 +66,7 @@ const Footer = ({ lang }) => {
             <nav className="space-y-1">
               <Link 
                 to="/" 
+                onClick={scrollToTop}
                 className="group flex items-center text-slate-300 hover:text-purple-400 transition-all duration-300 text-sm py-1"
               >
                 <FaHome className="w-3 h-3 mr-2 group-hover:scale-110 transition-transform duration-300" />
@@ -65,6 +74,7 @@ const Footer = ({ lang }) => {
               </Link>
               <Link 
                 to="/about" 
+                onClick={scrollToTop}
                 className="group flex items-center text-slate-300 hover:text-purple-400 transition-all duration-300 text-sm py-1"
               >
                 <FaUser className="w-3 h-3 mr-2 group-hover:scale-110 transition-transform duration-300" />
@@ -72,6 +82,7 @@ const Footer = ({ lang }) => {
               </Link>
               <Link 
                 to="/projects" 
+                onClick={scrollToTop}
                 className="group flex items-center text-slate-300 hover:text-purple-400 transition-all duration-300 text-sm py-1"
               >
                 <FaFolderOpen className="w-3 h-3 mr-2 group-hover:scale-110 transition-transform duration-300" />
@@ -79,6 +90,7 @@ const Footer = ({ lang }) => {
               </Link>
               <Link 
                 to="/contact" 
+                onClick={scrollToTop}
                 className="group flex items-center text-slate-300 hover:text-purple-400 transition-all duration-300 text-sm py-1"
               >
                 <FaEnvelopeOpen className="w-3 h-3 mr-2 group-hover:scale-110 transition-transform duration-300" />

@@ -8,6 +8,14 @@ const Header = ({ lang, toggleLang }) => {
   const [open, setOpen] = useState(false);
   const { isDark, toggleTheme } = useTheme();
 
+  // Fonction pour scroller vers le haut de la page
+  const scrollToTop = () => {
+    window.scrollTo({
+      top: 0,
+      behavior: 'smooth'
+    });
+  };
+
   return (
     <>
       {/* Overlay pour mobile */}
@@ -20,7 +28,11 @@ const Header = ({ lang, toggleLang }) => {
       
       <header className="bg-white shadow-md dark:bg-slate-900 relative z-50">
         <div className="max-w-7xl mx-auto px-4 py-4 flex items-center justify-between">
-        <Link to="/" className="text-xl font-bold text-slate-800 dark:text-white hover:text-purple-600 transition-colors">
+        <Link 
+          to="/" 
+          onClick={scrollToTop}
+          className="text-xl font-bold text-slate-800 dark:text-white hover:text-purple-600 transition-colors"
+        >
           Guindo <span className="text-purple-600">Salifou</span>
         </Link>
 
@@ -41,28 +53,40 @@ const Header = ({ lang, toggleLang }) => {
             <Link 
               to="/" 
               className="block py-3 px-2 text-slate-800 dark:text-white hover:text-purple-600 transition-colors border-b border-slate-200 dark:border-slate-700 md:border-none"
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                setOpen(false);
+                scrollToTop();
+              }}
             >
               {lang === "fr" ? "Accueil" : "Home"}
             </Link>
             <Link 
               to="/about" 
               className="block py-3 px-2 text-slate-800 dark:text-white hover:text-purple-600 transition-colors border-b border-slate-200 dark:border-slate-700 md:border-none"
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                setOpen(false);
+                scrollToTop();
+              }}
             >
               {lang === "fr" ? "À propos" : "About"}
             </Link>
             <Link 
               to="/projects" 
               className="block py-3 px-2 text-slate-800 dark:text-white hover:text-purple-600 transition-colors border-b border-slate-200 dark:border-slate-700 md:border-none"
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                setOpen(false);
+                scrollToTop();
+              }}
             >
               {lang === "fr" ? "Projets" : "Projects"}
             </Link>
             <Link 
               to="/contact" 
               className="block py-3 px-2 text-slate-800 dark:text-white hover:text-purple-600 transition-colors border-b border-slate-200 dark:border-slate-700 md:border-none"
-              onClick={() => setOpen(false)}
+              onClick={() => {
+                setOpen(false);
+                scrollToTop();
+              }}
             >
               {lang === "fr" ? "Contact" : "Contact"}
             </Link>
