@@ -8,10 +8,13 @@ const Footer = ({ lang }) => {
 
   // Fonction pour scroller vers le haut de la page
   const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
-      behavior: 'smooth'
-    });
+    // Forcer le scroll même si on est déjà sur la même page
+    setTimeout(() => {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    }, 100);
   };
 
   return (
