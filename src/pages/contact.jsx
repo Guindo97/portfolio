@@ -1,6 +1,8 @@
 import React, { useEffect, useRef, useState } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaDownload, FaCopy, FaCheck, FaPhone, FaClock, FaGlobe, FaRocket, FaHeart, FaStar, FaAward, FaCode, FaPalette, FaLightbulb } from "react-icons/fa";
 import Footer from "../components/footer";
+import emailjs from '@emailjs/browser';
+import { EMAILJS_CONFIG } from '../config/emailjs';
 
 function Contact({ lang }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -185,14 +187,36 @@ function Contact({ lang }) {
     e.preventDefault();
     setIsSubmitting(true);
     
-    // Simulation d'envoi (remplacer par vraie logique)
-    await new Promise(resolve => setTimeout(resolve, 2000));
-    
-    setIsSubmitting(false);
-    setFormData({ name: '', email: '', subject: '', message: '' });
-    
-    // Afficher message de succès
-    alert(lang === "fr" ? "Message envoyé avec succès !" : "Message sent successfully!");
+    try {
+      // Paramètres du template
+      const templateParams = {
+        from_name: formData.name,
+        from_email: formData.email,
+        subject: formData.subject,
+        message: formData.message,
+        to_email: EMAILJS_CONFIG.TO_EMAIL
+      };
+      
+      // Envoi de l'email
+      await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID, 
+        EMAILJS_CONFIG.TEMPLATE_ID, 
+        templateParams, 
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+      
+      // Réinitialiser le formulaire
+      setFormData({ name: '', email: '', subject: '', message: '' });
+      
+      // Afficher message de succès
+      alert(lang === "fr" ? "Message envoyé avec succès ! Je vous répondrai bientôt." : "Message sent successfully! I'll get back to you soon.");
+      
+    } catch (error) {
+      console.error('Erreur lors de l\'envoi:', error);
+      alert(lang === "fr" ? "Erreur lors de l'envoi du message. Veuillez réessayer." : "Error sending message. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   // Copier email
@@ -306,15 +330,23 @@ function Contact({ lang }) {
                     <p className="text-slate-600 dark:text-slate-300 mb-2 text-lg">{info.value}</p>
                     <p className="text-sm text-slate-500 dark:text-slate-400 mb-4">{info.description}</p>
                     {info.title === "Email" && (
-                      <button
-                        onClick={copyEmail}
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors duration-300"
-                      >
-                        {copied ? <FaCheck className="text-green-500" /> : <FaCopy />}
-                        {copied ? (lang === "fr" ? "Copié !" : "Copied!") : (lang === "fr" ? "Copier" : "Copy")}
-                      </button>
+                      <div className="flex flex-col sm:flex-row gap-3 items-center justify-center">
+                        <button
+                          onClick={copyEmail}
+                          className="inline-flex items-center gap-2 px-4 py-2 bg-slate-100 dark:bg-slate-700 text-slate-700 dark:text-slate-300 rounded-lg hover:bg-slate-200 dark:hover:bg-slate-600 transition-colors duration-300"
+                        >
+                          {copied ? <FaCheck className="text-green-500" /> : <FaCopy />}
+                          {copied ? (lang === "fr" ? "Copié !" : "Copied!") : (lang === "fr" ? "Copier" : "Copy")}
+                        </button>
+                        <a
+                          href={info.link}
+                          className="inline-flex items-center gap-2 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
+                        >
+                          {lang === "fr" ? "Contacter" : "Contact"}
+                        </a>
+                      </div>
                     )}
-                    {info.link !== "#" && (
+                    {info.title !== "Email" && info.link !== "#" && (
                       <a
                         href={info.link}
                         className="inline-block mt-4 px-6 py-3 bg-gradient-to-r from-purple-600 to-blue-600 text-white rounded-lg hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-lg hover:shadow-xl"
