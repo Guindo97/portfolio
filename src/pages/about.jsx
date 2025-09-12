@@ -212,12 +212,11 @@ function About({ lang }) {
               <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
                 {skills.map((skill, index) => (
                   <div key={index} className="skill-card animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
-                    <div className="flex items-center justify-between mb-4">
+                    <div className="flex items-center mb-4">
                       <div className="flex items-center space-x-3">
                         <img src={skill.icon} alt={skill.name} className="w-8 h-8" />
                         <span className="text-slate-800 dark:text-white font-semibold">{skill.name}</span>
                       </div>
-                      <span className="text-slate-600 dark:text-slate-300 text-sm font-medium">{skill.level}%</span>
                     </div>
                     <div className="skill-bar">
                       <div 
@@ -245,7 +244,6 @@ function About({ lang }) {
                           style={{ '--skill-level': `${lang.level}%` }}
                         ></div>
                       </div>
-                      <div className="text-sm text-slate-600 dark:text-slate-300 mt-2">{lang.level}%</div>
                     </div>
                   ))}
                 </div>

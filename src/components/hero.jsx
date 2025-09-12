@@ -251,12 +251,11 @@ const Hero = ({ lang }) => {
               className={`skill-card animate-fade-in-up ${currentSkill === index ? 'scale-105' : ''}`}
               style={{ animationDelay: `${index * 100}ms` }}
             >
-              <div className="flex items-center justify-between mb-4">
+              <div className="flex items-center mb-4">
                 <div className="flex items-center space-x-3">
                   <img src={skill.icon} alt={skill.name} className="w-8 h-8" />
                   <span className="text-slate-800 dark:text-white font-semibold">{skill.name}</span>
                 </div>
-                <span className="text-slate-600 dark:text-white/80 text-sm font-medium">{skill.level}%</span>
               </div>
               <div className="skill-bar">
                 <div 
