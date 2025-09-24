@@ -315,7 +315,7 @@ const Hero = ({ lang }) => {
       </div>
 
       {/* SECTION "How can I help you?" améliorée */}
-      <div className="mt-24 text-center max-w-6xl relative z-10">
+      <div className="mt-24 mb-16 text-center max-w-6xl relative z-10">
         <h2 className="text-4xl md:text-5xl font-bold text-slate-800 dark:text-white mb-4 animate-fade-in-up">
           {lang === "fr" ? "Comment puis-je vous aider ?" : "How can I help you?"}
         </h2>
