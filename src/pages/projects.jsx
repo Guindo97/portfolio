@@ -1,6 +1,7 @@
 // src/pages/projects.jsx 
 import React, { useEffect, useRef, useState } from "react";
 import Footer from "../components/footer";
+import OptimizedImage from "../components/OptimizedImage";
 
 function Projects({ lang }) {
   const [visibleProjects, setVisibleProjects] = useState([]);
@@ -301,22 +302,22 @@ function Projects({ lang }) {
               <div className="inline-flex items-center justify-center mb-6 p-6 glass-card rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 group card-3d animate-card-float">
                 {category.id === "react" && (
                   <div className="w-16 h-16 bg-gradient-to-br from-blue-400 to-blue-600 rounded-xl flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <img src="/img/react.png" alt="React" className="w-10 h-10" />
+                    <OptimizedImage src="/img/react.png" alt="React" className="w-10 h-10" loading="lazy" />
                   </div>
                 )}
                 {category.id === "vue" && (
                   <div className="w-16 h-16 bg-gradient-to-br from-green-400 to-green-600 rounded-xl flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <img src="/img/Vuejs.png" alt="Vue.js" className="w-10 h-10" />
+                    <OptimizedImage src="/img/Vuejs.png" alt="Vue.js" className="w-10 h-10" loading="lazy" />
                   </div>
                 )}
                 {category.id === "flutter" && (
                   <div className="w-16 h-16 bg-gradient-to-br from-cyan-400 to-cyan-600 rounded-xl flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <img src="/img/flutter.png" alt="Flutter" className="w-10 h-10" />
+                    <OptimizedImage src="/img/flutter.png" alt="Flutter" className="w-10 h-10" loading="lazy" />
                   </div>
                 )}
                 {category.id === "java" && (
                   <div className="w-16 h-16 bg-gradient-to-br from-orange-400 to-orange-600 rounded-xl flex items-center justify-center mr-4 shadow-lg group-hover:scale-110 transition-transform duration-300">
-                    <img src="/img/java.png" alt="Java" className="w-10 h-10" />
+                    <OptimizedImage src="/img/java.png" alt="Java" className="w-10 h-10" loading="lazy" />
                   </div>
                 )}
                 <div className="text-left">
@@ -385,7 +386,7 @@ function Projects({ lang }) {
                         <div className={`flex gap-3 w-max py-4 ${project.images.length > 10 ? 'animate-scroll-slow' : 'animate-scroll'}`}>
                           {[...project.images, ...project.images].map((img, i) => (
                             <div key={i} className="relative group/image project-image-container">
-                              <img
+                              <OptimizedImage
                                 src={img}
                                 alt={`${project.title} image ${i}`}
                                 className={`${project.images.length > 10 ? 'project-image-large' : 'project-image'} shadow-lg hover:shadow-xl transition-all duration-300 group-hover/image:scale-105`}

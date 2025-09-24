@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from "react";
 import guindoPhoto from "/img/salifouguindo.jpg";
 import Footer from "../components/footer";
+import OptimizedImage from "../components/OptimizedImage";
 
 function About({ lang }) {
   const ref = useRef(null);
@@ -147,10 +148,11 @@ function About({ lang }) {
                   <div className="absolute inset-0 rounded-2xl bg-gradient-to-r from-purple-400 to-blue-400 opacity-20 blur-2xl scale-110 group-hover:opacity-30 transition-opacity duration-500"></div>
                   
                   <div className="relative overflow-hidden rounded-2xl shadow-2xl">
-                    <img
+                    <OptimizedImage
                       src={guindoPhoto}
                       alt="Guindo Salifou"
                       className="w-full max-w-md h-auto object-cover transition-all duration-500 group-hover:scale-105"
+                      loading="eager"
                     />
                     <div className="absolute inset-0 bg-gradient-to-t from-purple-600/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                   </div>
@@ -214,7 +216,7 @@ function About({ lang }) {
                   <div key={index} className="skill-card animate-fade-in-up" style={{ animationDelay: `${index * 100}ms` }}>
                     <div className="flex items-center mb-4">
                       <div className="flex items-center space-x-3">
-                        <img src={skill.icon} alt={skill.name} className="w-8 h-8" />
+                        <OptimizedImage src={skill.icon} alt={skill.name} className="w-8 h-8" loading="lazy" />
                         <span className="text-slate-800 dark:text-white font-semibold">{skill.name}</span>
                       </div>
                     </div>

@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import Footer from './footer';
+import OptimizedImage from './OptimizedImage';
 
 const Hero = ({ lang }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -131,7 +132,7 @@ const Hero = ({ lang }) => {
 
   return (
     <>
-    <section className="hero-enhanced min-h-screen flex flex-col items-center justify-center px-4 text-center transition-colors duration-300 relative overflow-hidden pt-20">
+    <section id="main-content" className="hero-enhanced min-h-screen flex flex-col items-center justify-center px-4 text-center transition-colors duration-300 relative overflow-hidden pt-20">
       {/* Particules flottantes */}
       {particles.map(particle => (
         <div
@@ -172,8 +173,9 @@ const Hero = ({ lang }) => {
         <img
           src="/img/mrsalifg.jpg"
           alt="Salifou Guindo"
-              className="w-full h-full object-cover object-top rounded-full"
-            />
+          className="w-full h-full object-cover object-top rounded-full"
+          loading="eager"
+        />
           </div>
         </div>
 
@@ -252,10 +254,10 @@ const Hero = ({ lang }) => {
               style={{ animationDelay: `${index * 100}ms` }}
             >
               <div className="flex items-center mb-4">
-                <div className="flex items-center space-x-3">
-                  <img src={skill.icon} alt={skill.name} className="w-8 h-8" />
-                  <span className="text-slate-800 dark:text-white font-semibold">{skill.name}</span>
-                </div>
+              <div className="flex items-center space-x-3">
+                <img src={skill.icon} alt={skill.name} className="w-8 h-8" loading="lazy" />
+                <span className="text-slate-800 dark:text-white font-semibold">{skill.name}</span>
+              </div>
               </div>
               <div className="skill-bar">
                 <div 
@@ -294,19 +296,19 @@ const Hero = ({ lang }) => {
         <div className="scroll-logo-track">
           {[...Array(3)].map((_, i) => (
             <React.Fragment key={i}>
-              <img src="/img/react.png" alt="React" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" />
-              <img src="/img/javascript.png" alt="JavaScript" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" />
-              <img src="/img/flutter.png" alt="Flutter" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" />
-              <img src="/img/tailwind.png" alt="Tailwind" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" />
-              <img src="/img/typescript.png" alt="TypeScript" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" />
-              <img src="/img/github.png" alt="GitHub" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" />
-              <img src="/img/figma.png" alt="Figma" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" />
-              <img src="/img/html.png" alt="HTML" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" />
-              <img src="/img/css.png" alt="CSS" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" />
-              <img src="/img/java.png" alt="Java" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" />
-              <img src="/img/NuxtJS.png" alt="Nuxt" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" />
-              <img src="/img/Nextjs.jpeg" alt="Next" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" />
-              <img src="/img/Vuejs.png" alt="Vue" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" />
+              <OptimizedImage src="/img/react.png" alt="React" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" loading="lazy" />
+              <OptimizedImage src="/img/javascript.png" alt="JavaScript" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" loading="lazy" />
+              <OptimizedImage src="/img/flutter.png" alt="Flutter" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" loading="lazy" />
+              <OptimizedImage src="/img/tailwind.png" alt="Tailwind" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" loading="lazy" />
+              <OptimizedImage src="/img/typescript.png" alt="TypeScript" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" loading="lazy" />
+              <OptimizedImage src="/img/github.png" alt="GitHub" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" loading="lazy" />
+              <OptimizedImage src="/img/figma.png" alt="Figma" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" loading="lazy" />
+              <OptimizedImage src="/img/html.png" alt="HTML" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" loading="lazy" />
+              <OptimizedImage src="/img/css.png" alt="CSS" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" loading="lazy" />
+              <OptimizedImage src="/img/java.png" alt="Java" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" loading="lazy" />
+              <OptimizedImage src="/img/NuxtJS.png" alt="Nuxt" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" loading="lazy" />
+              <OptimizedImage src="/img/Nextjs.jpeg" alt="Next" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" loading="lazy" />
+              <OptimizedImage src="/img/Vuejs.png" alt="Vue" className="h-8 opacity-80 hover:opacity-100 transition-opacity duration-300" loading="lazy" />
             </React.Fragment>
           ))}
         </div>
@@ -327,7 +329,7 @@ const Hero = ({ lang }) => {
           {/* Web Development */}
           <div className="glass-card-enhanced p-8 hover:scale-105 transition-all duration-300 group animate-fade-in-up animation-delay-400">
             <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-blue-500 to-purple-600 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
-              <img src="/img/webdev.png" alt="Web Development" className="w-12 h-12" />
+              <OptimizedImage src="/img/webdev.png" alt="Web Development" className="w-12 h-12" loading="lazy" />
             </div>
             <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-4">
               {lang === "fr" ? "Développement Web" : "Web Development"}
@@ -342,7 +344,7 @@ const Hero = ({ lang }) => {
           {/* REST API */}
           <div className="glass-card-enhanced p-8 hover:scale-105 transition-all duration-300 group animate-fade-in-up animation-delay-600">
             <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-green-500 to-blue-600 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
-              <img src="/img/api.png" alt="API Development" className="w-12 h-12" />
+              <OptimizedImage src="/img/api.png" alt="API Development" className="w-12 h-12" loading="lazy" />
             </div>
             <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-4">
               {lang === "fr" ? "Développement d'API REST" : "REST API Development"}
@@ -357,7 +359,7 @@ const Hero = ({ lang }) => {
           {/* UI/UX */}
           <div className="glass-card-enhanced p-8 hover:scale-105 transition-all duration-300 group animate-fade-in-up animation-delay-800">
             <div className="w-20 h-20 mx-auto mb-6 bg-gradient-to-br from-pink-500 to-purple-600 rounded-2xl flex items-center justify-center group-hover:rotate-12 transition-transform duration-300">
-              <img src="/img/design.png" alt="UI/UX Design" className="w-12 h-12" />
+              <OptimizedImage src="/img/design.png" alt="UI/UX Design" className="w-12 h-12" loading="lazy" />
             </div>
             <h3 className="text-2xl font-bold text-slate-800 dark:text-white mb-4">
               UI/UX Design

@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { FaGithub, FaLinkedin, FaEnvelope, FaMapMarkerAlt, FaDownload, FaCopy, FaCheck, FaPhone, FaClock, FaGlobe, FaRocket, FaHeart, FaStar, FaAward, FaCode, FaPalette, FaLightbulb } from "react-icons/fa";
 import Footer from "../components/footer";
 import emailjs from '@emailjs/browser';
-import { EMAILJS_CONFIG } from '../config/emailjs';
+import { EMAILJS_CONFIG, validateEmailJSConfig } from '../config/emailjs';
 
 function Contact({ lang }) {
   const [isVisible, setIsVisible] = useState(false);
@@ -18,6 +18,7 @@ function Contact({ lang }) {
   const [activeTab, setActiveTab] = useState('contact');
   const [hoveredCard, setHoveredCard] = useState(null);
   const [typingText, setTypingText] = useState('');
+  const [submitStatus, setSubmitStatus] = useState(null); // 'success', 'error', null
   const contactRef = useRef(null);
 
   // Génération de particules flottantes
@@ -186,6 +187,14 @@ function Contact({ lang }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setSubmitStatus(null);
+    
+    // Vérifier si EmailJS est configuré
+    if (!validateEmailJSConfig()) {
+      setSubmitStatus('error');
+      setIsSubmitting(false);
+      return;
+    }
     
     try {
       // Paramètres du template
@@ -207,13 +216,14 @@ function Contact({ lang }) {
       
       // Réinitialiser le formulaire
       setFormData({ name: '', email: '', subject: '', message: '' });
+      setSubmitStatus('success');
       
-      // Afficher message de succès
-      alert(lang === "fr" ? "Message envoyé avec succès ! Je vous répondrai bientôt." : "Message sent successfully! I'll get back to you soon.");
+      // Auto-hide success message after 5 seconds
+      setTimeout(() => setSubmitStatus(null), 5000);
       
     } catch (error) {
       console.error('Erreur lors de l\'envoi:', error);
-      alert(lang === "fr" ? "Erreur lors de l'envoi du message. Veuillez réessayer." : "Error sending message. Please try again.");
+      setSubmitStatus('error');
     } finally {
       setIsSubmitting(false);
     }
@@ -394,6 +404,33 @@ function Contact({ lang }) {
                   <p className="text-slate-600 dark:text-slate-300">
                     {lang === "fr" ? "Décrivez votre projet et je vous répondrai rapidement !" : "Describe your project and I'll get back to you quickly!"}
                   </p>
+                  
+                  {/* Messages de statut */}
+                  {submitStatus === 'success' && (
+                    <div className="mt-4 p-4 bg-green-100 dark:bg-green-900/20 border border-green-300 dark:border-green-700 rounded-lg">
+                      <div className="flex items-center justify-center">
+                        <FaCheck className="text-green-600 dark:text-green-400 mr-2" />
+                        <span className="text-green-800 dark:text-green-200 font-medium">
+                          {lang === "fr" ? "Message envoyé avec succès ! Je vous répondrai bientôt." : "Message sent successfully! I'll get back to you soon."}
+                        </span>
+                      </div>
+                    </div>
+                  )}
+                  
+                  {submitStatus === 'error' && (
+                    <div className="mt-4 p-4 bg-red-100 dark:bg-red-900/20 border border-red-300 dark:border-red-700 rounded-lg">
+                      <div className="flex items-center justify-center">
+                        <svg className="w-5 h-5 text-red-600 dark:text-red-400 mr-2" fill="currentColor" viewBox="0 0 20 20">
+                          <path fillRule="evenodd" d="M18 10a8 8 0 11-16 0 8 8 0 0116 0zm-7 4a1 1 0 11-2 0 1 1 0 012 0zm-1-9a1 1 0 00-1 1v4a1 1 0 102 0V6a1 1 0 00-1-1z" clipRule="evenodd" />
+                        </svg>
+                        <span className="text-red-800 dark:text-red-200 font-medium">
+                          {lang === "fr" 
+                            ? "Le formulaire n'est pas encore configuré. Utilisez l'email direct : salifouguindo7@gmail.com" 
+                            : "Form not configured yet. Use direct email: salifouguindo7@gmail.com"}
+                        </span>
+                      </div>
+                    </div>
+                  )}
                 </div>
                 
                 <form onSubmit={handleSubmit} className="space-y-8">
