@@ -279,7 +279,7 @@ const Hero = ({ lang }) => {
         <div className="space-y-8">
           {timeline.map((item, index) => (
             <div key={index} className="timeline-item-enhanced animate-fade-in-up" style={{ animationDelay: `${index * 200}ms` }}>
-              <div className="glass-card-enhanced">
+              <div className="glass-card-enhanced p-6">
                 <div className="flex items-center justify-between mb-2">
                   <h3 className="text-xl font-bold text-slate-800 dark:text-white">{item.title}</h3>
                   <span className="text-purple-600 dark:text-purple-300 font-semibold">{item.year}</span>

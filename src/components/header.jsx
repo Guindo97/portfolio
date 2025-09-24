@@ -114,7 +114,7 @@ const Header = ({ lang, toggleLang }) => {
             </Link>
 
             {/* Boutons de contrôle */}
-            <div className="flex items-center justify-between pt-4 md:pt-0">
+            <div className="flex items-center gap-4 pt-4 md:pt-0">
               {/* Bouton mode sombre */}
               <button
                 onClick={toggleTheme}
