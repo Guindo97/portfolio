@@ -18,7 +18,7 @@ const Footer = ({ lang }) => {
   };
 
   return (
-    <footer className="bg-slate-800 dark:bg-slate-900 text-white py-6 w-full">
+    <footer className="bg-slate-800 dark:bg-slate-900 text-white py-6 w-full mt-16">
       <div className="w-full px-4">
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           {/* Informations personnelles */}
