@@ -5,11 +5,14 @@ import { BrowserRouter } from 'react-router-dom'; // ✅
 
 import './index.css';
 import App from './App';
+import { ThemeProvider } from './contexts/ThemeContext';
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <BrowserRouter> {/* ✅ Ici */}
-      <App />
+      <ThemeProvider>
+        <App />
+      </ThemeProvider>
     </BrowserRouter>
   </StrictMode>
 );

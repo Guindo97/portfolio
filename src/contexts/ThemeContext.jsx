@@ -14,7 +14,7 @@ export const ThemeProvider = ({ children }) => {
   const [isDark, setIsDark] = useState(() => {
     // Vérifier si on est côté client
     if (typeof window === 'undefined') {
-      return false;
+      return true; // Mode sombre par défaut
     }
     
     // Vérifier si l'utilisateur a une préférence sauvegardée
@@ -22,8 +22,9 @@ export const ThemeProvider = ({ children }) => {
     if (savedTheme) {
       return savedTheme === 'dark';
     }
-    // Sinon, utiliser la préférence système
-    return window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Mode sombre par défaut (au lieu de suivre la préférence système)
+    return true;
   });
 
   const toggleTheme = () => {
@@ -54,6 +55,13 @@ export const ThemeProvider = ({ children }) => {
     } else {
       root.classList.remove('dark');
     }
+  }, []);
+
+  // Effet pour appliquer le thème immédiatement au montage du composant
+  useEffect(() => {
+    const root = document.documentElement;
+    // Appliquer le mode sombre par défaut immédiatement
+    root.classList.add('dark');
   }, []);
 
   const value = {

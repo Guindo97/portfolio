@@ -70,7 +70,7 @@ const Hero = ({ lang }) => {
 
   // Animation de typing
   useEffect(() => {
-    const fullText = lang === "fr" ? "Développeur Frontend" : "Frontend Developer";
+    const fullText = lang === "fr" ? "Développeur Full Stack Web & Mobile" : "Full Stack Web & Mobile Developer";
     let index = 0;
     
     const typeText = () => {

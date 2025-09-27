@@ -13,9 +13,29 @@ const Contact = lazy(() => import("./pages/contact"));
 import "./index.css"; // ✅ CSS global
 
 function App() {
-  const [lang, setLang] = useState("fr");
+  const [lang, setLang] = useState(() => {
+    // Vérifier si on est côté client
+    if (typeof window === 'undefined') {
+      return 'en'; // Langue par défaut : anglais
+    }
+    
+    // Vérifier si l'utilisateur a une préférence sauvegardée
+    const savedLang = localStorage.getItem('language');
+    if (savedLang) {
+      return savedLang;
+    }
+    
+    // Langue par défaut : anglais
+    return 'en';
+  });
+
   const toggleLang = () => {
-    setLang((prevLang) => (prevLang === "fr" ? "en" : "fr"));
+    setLang((prevLang) => {
+      const newLang = prevLang === "fr" ? "en" : "fr";
+      // Sauvegarder la préférence dans localStorage
+      localStorage.setItem('language', newLang);
+      return newLang;
+    });
   };
 
   // Composant de chargement pour Suspense
