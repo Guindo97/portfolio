@@ -185,18 +185,20 @@ const Hero = ({ lang }) => {
             <span className="text-shimmer">Guindo Salifou</span>
           </h1>
           
-          <h2 className="text-2xl md:text-3xl font-semibold animate-fade-in-up animation-delay-200 flex items-center">
+          <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold animate-fade-in-up animation-delay-200 flex flex-col sm:flex-row sm:items-center gap-2">
             <span className="typing-text">{typingText}</span>
-            <img 
-              src="https://flagcdn.com/w20/ca.png" 
-              alt="Canada" 
-              className="ml-2 w-6 h-4 object-cover rounded-sm"
-              onError={(e) => {
-                e.target.style.display = 'none';
-                e.target.nextSibling.style.display = 'inline';
-              }}
-            />
-            <span className="ml-2 text-2xl hidden">🇨🇦</span>
+            <div className="flex items-center">
+              <img 
+                src="https://flagcdn.com/w20/ca.png" 
+                alt="Canada" 
+                className="w-6 h-4 object-cover rounded-sm"
+                onError={(e) => {
+                  e.target.style.display = 'none';
+                  e.target.nextSibling.style.display = 'inline';
+                }}
+              />
+              <span className="ml-2 text-2xl hidden">🇨🇦</span>
+            </div>
           </h2>
           
           <p className="text-lg md:text-xl text-slate-700 dark:text-white/90 max-w-2xl animate-fade-in-up animation-delay-400 leading-relaxed">
