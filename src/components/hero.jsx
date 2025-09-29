@@ -118,11 +118,11 @@ const Hero = ({ lang }) => {
     const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent);
     
     if (isIOS) {
-      window.open('/img/Resume Salifou Guindo Dev.pdf', '_blank');
+      window.open('/img/Salifou_Guindo_FullStack_WebDeveloper.pdf', '_blank');
     } else {
       const link = document.createElement('a');
-      link.href = '/img/Resume Salifou Guindo Dev.pdf';
-      link.download = 'Resume Salifou Guindo Dev.pdf';
+      link.href = '/img/Salifou_Guindo_FullStack_WebDeveloper.pdf';
+      link.download = 'Salifou_Guindo_FullStack_WebDeveloper.pdf';
       link.target = '_blank';
       document.body.appendChild(link);
       link.click();

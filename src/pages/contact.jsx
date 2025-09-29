@@ -566,7 +566,7 @@ function Contact({ lang }) {
                       : "Check out my CV for more information about my background and skills"}
                   </p>
                   <a
-                    href="/img/Resume Salifou Guindo Dev.pdf"
+                    href="/img/Salifou_Guindo_FullStack_WebDeveloper.pdf"
                     download
                     className="inline-flex items-center gap-3 px-10 py-5 bg-gradient-to-r from-purple-600 to-blue-600 text-white font-bold text-xl rounded-xl hover:from-purple-700 hover:to-blue-700 transition-all duration-300 shadow-xl hover:shadow-2xl hover:scale-105"
                   >
