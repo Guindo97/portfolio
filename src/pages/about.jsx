@@ -285,7 +285,7 @@ function About({ lang }) {
                   },
                   {
                     year: '2015 – 2017',
-                    title: lang === "fr" ? "BTS en Développement d'Applications" : "Associate Degree in Application Development",
+                    title: lang === "fr" ? "Diplôme d'études collégiales en Développement d'Applications" : "Associate Degree in Application Development",
                     location: "Côte d'Ivoire",
                     description: lang === "fr" ? "Première formation en développement d'applications et programmation." : "First training in application development and programming.",
                     color: 'green',

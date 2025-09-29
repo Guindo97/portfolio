@@ -32,7 +32,7 @@ const Hero = ({ lang }) => {
     {
       year: '2025',
       title: lang === "fr" ? "Diplômé CCNB" : "CCNB Graduate",
-      description: lang === "fr" ? "BTS en Développement d'Applications" : "Associate Degree in Application Development"
+      description: lang === "fr" ? "Diplôme d'études collégiales en Développement d'Applications" : "Associate Degree in Application Development"
     },
     {
       year: '2024',
